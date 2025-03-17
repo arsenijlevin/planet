@@ -1,0 +1,122 @@
+.quizPage {
+  background-color: var(--light-background-color);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.heading h1 {
+  font-family: var(--font-tt-travels-next);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 65%;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--light-text-color);
+}
+
+.heading span {
+  font-family: var(--font-play);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.32em;
+  color: var(--light-text-color);
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 60px auto 0;
+  flex: 1;
+  max-width: 768px;
+  width: 100%;
+}
+
+.counter,
+.result {
+  margin-bottom: 10px;
+}
+
+.counter span,
+.question p,
+.result span {
+  font-family: var(--font-tt-travels-next);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.32em;
+  color: var(--light-text-color);
+}
+
+.question p {
+  letter-spacing: normal;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.answerButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answerButtons button,
+.navigation button {
+  padding: 10px;
+  background-color: #fff;
+  border: 0;
+  transition: background-color 0.3s ease;
+}
+
+.answerButtons button span,
+.navigation button span {
+  font-family: var(--font-play);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light-text-color);
+}
+
+.navigation {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+
+.navigation button {
+  flex: 1;
+}
+
+.navigation button span {
+  text-transform: lowercase;
+}
+
+.answerButtons button.wrongAnswer {
+  background-color: var(--light-quiz-incorrect-answer-color);
+}
+
+.answerButtons button.correctAnswer {
+  background-color: var(--light-quiz-correct-answer-color);
+}

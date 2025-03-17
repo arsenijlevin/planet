@@ -1,0 +1,76 @@
+.moonAwaiting {
+  background-color: var(--dark-background-color);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.heading h1 {
+  font-family: var(--font-tt-travels-next);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 65%;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--dark-text-color);
+}
+
+.heading span {
+  font-family: var(--font-play);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.32em;
+  color: #fff;
+}
+
+.tipButton {
+  display: flex;
+  max-width: 372px;
+  margin: 40px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tipButton button {
+  padding: 20px;
+  width: 100%;
+  margin: auto;
+  background: #fff;
+  opacity: 0.8;
+  border-radius: 5px;
+  border: 0;
+}
+
+.tipButton button span {
+  font-family: var(--font-play);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: #000;
+}
+
+.moonAnimation {
+  width: fit-content;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.moonAnimation video {
+  min-height: 360px;
+}

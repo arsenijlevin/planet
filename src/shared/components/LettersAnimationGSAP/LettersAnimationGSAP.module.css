@@ -1,0 +1,32 @@
+.lettersAnimation {
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lettersContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 100%;
+  gap: 16px;
+}
+
+.letter {
+  font-family: 'TT Travels Next Trl', sans-serif;
+  font-size: 22px;
+  position: absolute;
+  display: inline-block;
+  color: white;
+  user-select: none;
+  white-space: pre-wrap;
+}
+
+.word {
+  display: flex;
+  flex-wrap: nowrap;
+}
