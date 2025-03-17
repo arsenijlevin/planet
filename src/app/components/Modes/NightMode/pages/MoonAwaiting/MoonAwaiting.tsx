@@ -26,8 +26,8 @@ export function MoonAwaitingPage() {
       </div>
       <div className={styles.moonAnimation}>
         <video autoPlay loop muted ref={videoRef}>
-          <source src="/moon.mov"></source>
-          <source src="/moon.webm"></source>
+          <source src="moon.mov"></source>
+          <source src="moon.webm"></source>
         </video>
       </div>
       <div className={styles.tipButton}>
