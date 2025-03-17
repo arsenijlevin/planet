@@ -20,7 +20,7 @@ export const useNightModeStore = create<NightModeStore>()((set, get) => ({
 
     if (loadedPredictions) return loadedPredictions;
 
-    const response = await fetch('/predictions.json');
+    const response = await fetch('predictions.json');
 
     const json = await response.json();
 

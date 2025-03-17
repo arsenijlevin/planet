@@ -60,7 +60,7 @@ export const useDayModeStore = create<DayModeStore>()((set, get) => ({
     start: async () => {
       if (get().quiz.isStarted || get().quiz.questions.length > 0) return;
 
-      const response = await fetch('/questions.json');
+      const response = await fetch('questions.json');
 
       const json = (await response.json()) as QuizQuestion[];
 
