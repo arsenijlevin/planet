@@ -26,13 +26,18 @@ type MoonPhaseKey = keyof typeof MOON_PHASES;
 
 export const getMoscowTime = () => new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' }));
 
-console.log(getMoscowTime());
-
 export const sunPositionData = SunCalc.getTimes(getMoscowTime(), MOSCOW_COORDS.latitude, MOSCOW_COORDS.longitude);
 export const moonPositionData = SunCalc.getMoonIllumination(getMoscowTime());
 
-export const isNight = getMoscowTime().getTime() >= sunPositionData.sunset.getTime();
+export const currentTime = getMoscowTime().getTime();
+
+export const isNight =
+  currentTime >= sunPositionData.sunset.getTime() || currentTime <= sunPositionData.sunrise.getTime();
 export const isDay = !isNight;
+
+console.log('Time: ', getMoscowTime());
+console.log('Sunset: ', sunPositionData.sunset);
+console.log('Sunrise: ', sunPositionData.sunrise);
 
 export const moonPhase = moonPositionData.phase; // 0.0 - 1.0
 
