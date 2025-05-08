@@ -26,7 +26,7 @@
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
       "@shared/*": ["./src/shared/*"],
-      "@stores/*": ["./src/stores/*"],
+      "@stores/*": ["./src/stores/*"]
     }
   },
   "include": ["src"]

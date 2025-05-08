@@ -96,8 +96,6 @@ export function LettersAnimationGSAP({ sentence, isButtonClicked, animationTime 
               .eventCallback('onStart', () => {
                 letterTimeline.kill();
 
-                console.log('styles.lettersAnimation', styles.lettersAnimation);
-
                 const lettersContainer = document.querySelector<HTMLDivElement>(`.${styles.lettersContainer}`);
 
                 if (lettersContainer) {

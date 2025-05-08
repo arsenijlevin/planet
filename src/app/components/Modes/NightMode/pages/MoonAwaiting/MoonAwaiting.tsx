@@ -47,15 +47,10 @@ export function MoonAwaitingPage() {
 
                 setAnimationTime(stopTime - videoElement.currentTime);
 
-                console.log('stopTime - videoElement.currentTime', stopTime - videoElement.currentTime);
-
                 setTimeout(
                   () => {
                     videoElement.addEventListener('timeupdate', () => {
                       const timeLeft = Math.abs(stopTime - videoElement.currentTime);
-                      console.log('timeLeft', timeLeft);
-                      console.log('stopTime', stopTime);
-                      console.log('videoElement.currentTime', videoElement.currentTime);
 
                       if (timeLeft < 0.5) {
                         videoElement.playbackRate = 1;

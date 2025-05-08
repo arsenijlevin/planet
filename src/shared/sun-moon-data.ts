@@ -26,7 +26,7 @@ type MoonPhaseKey = keyof typeof MOON_PHASES;
 
 export const getMoscowTime = () => new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' }));
 
-console.log('"MOSCOW_TIME_NOW', getMoscowTime());
+console.log(getMoscowTime());
 
 export const sunPositionData = SunCalc.getTimes(getMoscowTime(), MOSCOW_COORDS.latitude, MOSCOW_COORDS.longitude);
 export const moonPositionData = SunCalc.getMoonIllumination(getMoscowTime());

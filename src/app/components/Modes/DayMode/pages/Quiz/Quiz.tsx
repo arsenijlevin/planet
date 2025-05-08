@@ -20,8 +20,6 @@ export function Quiz(props: QuizProps) {
   const quizLength = quiz.questions.length;
   const isAllCorrect = correctAnswers === quizLength;
 
-  console.log(quiz);
-
   return (
     <div className={styles.quizPageWrapper}>
       <main className={styles.quizPage}>
@@ -55,7 +53,7 @@ export function Quiz(props: QuizProps) {
                   const answeredQuestion = quiz.questions.find((question) => question.id === lastAnswer.questionId);
                   const correctVariant = answeredQuestion?.correctVariant.toString();
 
-                  console.log('correctVariant', correctVariant);
+                  // console.log('correctVariant', correctVariant);
 
                   const correctAnswerStyle = lastUserAnswer && variant === correctVariant ? styles.correctAnswer : '';
 
