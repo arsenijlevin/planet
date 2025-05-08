@@ -1,20 +1,13 @@
 :root {
-  --light-background-color: #bbc2d9;
-  --light-text-color: #1e1d1d;
+  --light-background-color: #c4cdee;
+  --light-text-color: #262639;
   --light-circles-first-color: #c99860;
   --light-circles-second-color: #42898d;
   --light-circles-third-color: #75b8ad;
   --light-circles-fourth-color: #b2d3f0;
   --light-circles-fifth-color: #cee3b9;
   --light-top-line-color: #cee3b9;
-  --light-quiz-correct-answer-color: #cee3b9;
+  --light-quiz-correct-answer-color: #6ccb71;
   --light-quiz-incorrect-answer-color: #f75e63;
-  --light-left-button-gradient: radial-gradient(97.57% 210.75% at 0.9% 2.98%, rgb(255 255 255 / 40%) 0%, #fff 100%);
-  --light-right-button-gradient: radial-gradient(
-    97.57% 210.75% at 0.9% 2.98%,
-    rgb(191 191 191 / 40%) 0%,
-    rgb(255 255 255 / 0%) 100%
-  );
-  --light-left-button-text-color: #1e1d1d;
-  --light-right-button-text-color: #fff;
+  --light-quiz-unselected-answer-color: rgb(255 255 255 / 50%);
 }

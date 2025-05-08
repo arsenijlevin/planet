@@ -1,7 +1,7 @@
 import { getMoonPhaseString } from '@shared/sun-moon-data';
 import { create } from 'zustand';
 
-export type NightModePage = 'start' | 'moon-awaiting';
+export type NightModePage = 'start' | 'moon-awaiting' | 'info';
 
 export interface NightModeStore {
   currentPage: NightModePage;

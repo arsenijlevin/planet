@@ -21,10 +21,10 @@
     "id": 3,
     "question": "Во сколько раз радиус Солнца больше радиуса Земли?",
     "variant_1": "4,8",
-    "variant_2": 10,
-    "variant_3": 54,
-    "variant_4": 109,
-    "correctVariant": 109
+    "variant_2": "10",
+    "variant_3": "54",
+    "variant_4": "109",
+    "correctVariant": "109"
   },
   {
     "id": 4,
@@ -101,11 +101,11 @@
   {
     "id": 12,
     "question": "Сколько планет в нашей Солнечной системе больше Земли?",
-    "variant_1": 1,
-    "variant_2": 3,
-    "variant_3": 2,
-    "variant_4": 4,
-    "correctVariant": 4
+    "variant_1": "1",
+    "variant_2": "3",
+    "variant_3": "2",
+    "variant_4": "4",
+    "correctVariant": "4"
   },
   {
     "id": 13,
@@ -326,11 +326,11 @@
   {
     "id": 37,
     "question": "Сколько непрерывных колец есть у Сатурна?",
-    "variant_1": 6,
-    "variant_2": 7,
-    "variant_3": 8,
-    "variant_4": 9,
-    "correctVariant": 9
+    "variant_1": "6",
+    "variant_2": "7",
+    "variant_3": "8",
+    "variant_4": "9",
+    "correctVariant": "9"
   },
   {
     "id": 38,
@@ -362,11 +362,11 @@
   {
     "id": 41,
     "question": "Сколько астронавтов живет на борту космической станции, когда она полностью укомплектована?",
-    "variant_1": 10,
-    "variant_2": 1,
-    "variant_3": 6,
-    "variant_4": 2,
-    "correctVariant": 6
+    "variant_1": "10",
+    "variant_2": "1",
+    "variant_3": "6",
+    "variant_4": "2",
+    "correctVariant": "6"
   },
   {
     "id": 42,
@@ -380,11 +380,11 @@
   {
     "id": 43,
     "question": "Сколько лет было самому молодому космонавту Герману Титову?",
-    "variant_1": 32,
-    "variant_2": 25,
-    "variant_3": 40,
-    "variant_4": 26,
-    "correctVariant": 25
+    "variant_1": "32",
+    "variant_2": "25",
+    "variant_3": "40",
+    "variant_4": "26",
+    "correctVariant": "25"
   },
   {
     "id": 44,
@@ -398,29 +398,29 @@
   {
     "id": 45,
     "question": "В каком году человек последний раз ходил по Луне?",
-    "variant_1": 1982,
-    "variant_2": 1992,
-    "variant_3": 1972,
-    "variant_4": 1962,
-    "correctVariant": 1972
+    "variant_1": "1982",
+    "variant_2": "1992",
+    "variant_3": "1972",
+    "variant_4": "1962",
+    "correctVariant": "1972"
   },
   {
     "id": 46,
     "question": "Сколько длятся юпитерианские сутки в земных часах?",
-    "variant_1": 99,
-    "variant_2": 17,
-    "variant_3": 9,
-    "variant_4": 11,
-    "correctVariant": 9
+    "variant_1": "99",
+    "variant_2": "17",
+    "variant_3": "9",
+    "variant_4": "11",
+    "correctVariant": "9"
   },
   {
     "id": 47,
     "question": "Сколько длятся сатурнианские сутки в земных часах?",
-    "variant_1": 7,
-    "variant_2": 10,
-    "variant_3": 11,
-    "variant_4": 40,
-    "correctVariant": 10
+    "variant_1": "7",
+    "variant_2": "10",
+    "variant_3": "11",
+    "variant_4": "40",
+    "correctVariant": "10"
   },
   {
     "id": 48,
@@ -434,20 +434,20 @@
   {
     "id": 49,
     "question": "Когда Плутон был исключен из списка планет?",
-    "variant_1": 2000,
-    "variant_2": 2006,
-    "variant_3": 2011,
-    "variant_4": 1995,
-    "correctVariant": 2006
+    "variant_1": "2000",
+    "variant_2": "2006",
+    "variant_3": "2011",
+    "variant_4": "1995",
+    "correctVariant": "2006"
   },
   {
     "id": 50,
     "question": "В каком году советский космонавт Валентина Терешкова стала первой женщиной, полетевшей в космос?",
-    "variant_1": 1963,
-    "variant_2": 1977,
-    "variant_3": 1953,
-    "variant_4": 1961,
-    "correctVariant": 1963
+    "variant_1": "1963",
+    "variant_2": "1977",
+    "variant_3": "1953",
+    "variant_4": "1961",
+    "correctVariant": "1963"
   },
   {
     "id": 51,
@@ -461,11 +461,11 @@
   {
     "id": 52,
     "question": "Сколько во Вселенной созвездий?",
-    "variant_1": 209,
-    "variant_2": 88,
-    "variant_3": 150,
-    "variant_4": 1100,
-    "correctVariant": 88
+    "variant_1": "209",
+    "variant_2": "88",
+    "variant_3": "150",
+    "variant_4": "1100",
+    "correctVariant": "88"
   },
   {
     "id": 53,
@@ -605,11 +605,11 @@
   {
     "id": 68,
     "question": "Когда началась космическая эра?",
-    "variant_1": 1957,
-    "variant_2": 1999,
-    "variant_3": 1964,
-    "variant_4": 1941,
-    "correctVariant": 1957
+    "variant_1": "1957",
+    "variant_2": "1999",
+    "variant_3": "1964",
+    "variant_4": "1941",
+    "correctVariant": "1957"
   },
   {
     "id": 69,

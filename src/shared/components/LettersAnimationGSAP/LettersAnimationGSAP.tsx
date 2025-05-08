@@ -16,9 +16,6 @@ export function LettersAnimationGSAP({ sentence, isButtonClicked, animationTime 
   useEffect(() => {
     if (!sentence || !containerRef.current || !isButtonClicked) return;
 
-    console.log('sentence', sentence);
-    console.log('wordRefs.current.length', wordRefs.current.length);
-
     const words = sentence.split(' '); // Split the sentence by spaces to get words
     const container = containerRef.current;
 
@@ -54,14 +51,14 @@ export function LettersAnimationGSAP({ sentence, isButtonClicked, animationTime 
             letterTimeline.fromTo(
               letterElement,
               {
-                opacity: 1,
+                opacity: 0.9,
                 y: -window.innerHeight / 2 - 50, // Start position (above the screen)
                 x: gsap.utils.random(-window.innerWidth / 2, window.innerWidth / 2), // Random x-position
                 rotation: gsap.utils.random(-180, 180),
                 skewX: gsap.utils.random(-20, 20),
               },
               {
-                opacity: gsap.utils.random(0, 0.3),
+                opacity: 0.9,
                 y: window.innerHeight, // Fall to below the screen
                 rotation: gsap.utils.random(-360, 360),
                 duration: gsap.utils.random(3, 6),
@@ -89,7 +86,7 @@ export function LettersAnimationGSAP({ sentence, isButtonClicked, animationTime 
                   return 0;
                 },
                 y: 0, // Center the letters
-                opacity: 1,
+                opacity: 0.9,
                 rotation: 0,
                 skewX: 0,
                 duration: 2,
@@ -105,7 +102,12 @@ export function LettersAnimationGSAP({ sentence, isButtonClicked, animationTime 
 
                 if (lettersContainer) {
                   lettersContainer.style.height = 'fit-content';
-                  lettersContainer.style.margin = '500px auto 0 auto';
+
+                  if (window.innerWidth < 460) {
+                    lettersContainer.style.margin = '400px auto 0 auto';
+                  } else {
+                    lettersContainer.style.margin = '500px auto 0 auto';
+                  }
                 }
                 wordRefs.current.forEach((wordElement) => {
                   if (wordElement) {

@@ -9,6 +9,7 @@ import styles from './MoonAwaiting.module.css';
 
 export function MoonAwaitingPage() {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [showToTheMoonButton, setShowToTheMoonButton] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -17,58 +18,79 @@ export function MoonAwaitingPage() {
   const prediction = usePrediction();
 
   return (
-    <main className={styles.moonAwaiting}>
-      <LettersAnimationGSAP sentence={prediction} isButtonClicked={isButtonClicked} animationTime={animationTime} />
-      <Header mode="night" />
-      <div className={styles.heading}>
-        <h1>Луна-парк</h1>
-        <span>отгадайте 5 вопросов</span>
-      </div>
-      <div className={styles.moonAnimation}>
-        <video autoPlay loop muted ref={videoRef}>
-          <source src="moon.mov"></source>
-          <source src="moon.webm"></source>
-        </video>
-      </div>
-      <div className={styles.tipButton}>
-        {!isButtonClicked ? (
-          <button
-            onClick={() => {
-              setIsButtonClicked(true);
+    <div className={styles.moonAwaitingWrapper}>
+      <main className={styles.moonAwaiting}>
+        <Header mode="night" />
+        <div className={styles.heading}>
+          <h1>Луна-парк</h1>
+        </div>
+        <div className={styles.moonAnimation}>
+          <video autoPlay loop muted ref={videoRef}>
+            <source src="moon.mov"></source>
+            <source src="moon.webm"></source>
+          </video>
+        </div>
+        <LettersAnimationGSAP sentence={prediction} isButtonClicked={isButtonClicked} animationTime={animationTime} />
+        <div className={styles.tipButton}>
+          {!isButtonClicked ? (
+            <button
+              onClick={() => {
+                setIsButtonClicked(true);
 
-              const videoElement = videoRef.current;
+                const videoElement = videoRef.current;
 
-              if (!videoElement) return;
+                if (!videoElement) return;
 
-              videoElement.playbackRate = 3;
+                videoElement.playbackRate = 3;
 
-              const stopTime = MOON_VIDEO_TIMINGS[getMoonPhaseString()];
+                const stopTime = MOON_VIDEO_TIMINGS[getMoonPhaseString()];
 
-              setAnimationTime(stopTime - videoElement.currentTime);
+                setAnimationTime(stopTime - videoElement.currentTime);
 
-              videoElement.addEventListener('timeupdate', () => {
-                const timeLeft = stopTime - videoElement.currentTime;
+                console.log('stopTime - videoElement.currentTime', stopTime - videoElement.currentTime);
 
-                console.log('timeLeft', timeLeft);
+                setTimeout(
+                  () => {
+                    videoElement.addEventListener('timeupdate', () => {
+                      const timeLeft = Math.abs(stopTime - videoElement.currentTime);
+                      console.log('timeLeft', timeLeft);
+                      console.log('stopTime', stopTime);
+                      console.log('videoElement.currentTime', videoElement.currentTime);
 
-                if (timeLeft < 0.5) {
-                  videoElement.playbackRate = 1;
-                } else if (timeLeft < 1) {
-                  videoElement.playbackRate = 1.5;
-                } else if (timeLeft < 1.5) {
-                  videoElement.playbackRate = 2;
-                }
+                      if (timeLeft < 0.5) {
+                        videoElement.playbackRate = 1;
+                      } else if (timeLeft < 1) {
+                        videoElement.playbackRate = 1.5;
+                      } else if (timeLeft < 1.5) {
+                        videoElement.playbackRate = 2;
+                      }
 
-                if (videoElement.currentTime >= stopTime) {
-                  videoElement.pause();
-                }
-              });
-            }}
-          >
-            <span>получить подсказку</span>
-          </button>
-        ) : null}
-      </div>
-    </main>
+                      if (timeLeft <= 0.3) {
+                        videoElement.pause();
+                      }
+                    });
+
+                    setTimeout(
+                      () => {
+                        setShowToTheMoonButton(true);
+                      },
+                      (stopTime - videoElement.currentTime - 0.5) * 1000,
+                    );
+                  },
+                  (stopTime - videoElement.currentTime) * 1000,
+                );
+              }}
+            >
+              <span>получить подсказку</span>
+            </button>
+          ) : null}
+          {showToTheMoonButton ? (
+            <button className={`${styles.tipButton} ${styles.toTheMoonButton}`}>
+              <span>на Луну!</span>
+            </button>
+          ) : null}
+        </div>
+      </main>
+    </div>
   );
 }

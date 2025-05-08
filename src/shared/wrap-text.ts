@@ -24,8 +24,6 @@ export const wrapText = (
 
     const testWidth = ctx.measureText(testLine).width;
 
-    console.log('testWidth', testWidth);
-
     if (testWidth > maxWidth && n > 0) {
       lineArray.push({ text: line, x, y });
       y += lineHeight;

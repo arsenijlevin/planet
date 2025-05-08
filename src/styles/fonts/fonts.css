@@ -5,7 +5,7 @@
 }
 
 @font-face {
-  font-family: Play;
+  font-family: PlayBold;
   src:
     url('Play-Bold.woff2') format('woff2'),
     url('Play-Bold.woff') format('woff');
@@ -17,8 +17,8 @@
 @font-face {
   font-family: Play;
   src:
-    url('Play.woff2') format('woff2'),
-    url('Play.woff') format('woff');
+    url('Play-Regular.woff2') format('woff2'),
+    url('Play-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,15 +27,15 @@
 @font-face {
   font-family: Play;
   src:
-    url('Play.woff2') format('woff2'),
-    url('Play.woff') format('woff');
+    url('Play-Regular.woff2') format('woff2'),
+    url('Play-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
 @font-face {
-  font-family: Play;
+  font-family: PlayBold;
   src:
     url('Play-Bold.woff2') format('woff2'),
     url('Play-Bold.woff') format('woff');
@@ -47,8 +47,8 @@
 @font-face {
   font-family: Play;
   src:
-    url('Play.woff2') format('woff2'),
-    url('Play.woff') format('woff');
+    url('Play-Regular.woff2') format('woff2'),
+    url('Play-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;

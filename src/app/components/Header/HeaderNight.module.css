@@ -1,6 +1,6 @@
 header {
   display: flex;
-  margin-top: 16px;
+  padding-top: 16px;
   align-items: center;
   justify-content: center;
   gap: 16px;
@@ -47,17 +47,16 @@ header {
 }
 
 .headerTitle h4 {
-  font-family: var(--font-tt-travels-next);
+  font-family: var(--font-play);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 16px;
   text-align: center;
-  letter-spacing: 0.19em;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
   color: #fff;
-  opacity: 0.8;
-  text-wrap: nowrap;
+  opacity: 0.7;
 }
 
 .line {

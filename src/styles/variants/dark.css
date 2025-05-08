@@ -1,20 +1,10 @@
 :root {
   --dark-background-color: #26282e;
-  --dark-text-color: #ebebeb;
+  --dark-text-color: #fff;
   --dark-circles-first-color: #c99860;
   --dark-circles-second-color: #42898d;
   --dark-circles-third-color: #75b8ad;
   --dark-circles-fourth-color: #b2d3f0;
   --dark-circles-fifth-color: #cee3b9;
-  --dark-top-line-color: #fff;
-  --dark-quiz-correct-answer-color: #cee3b9;
-  --dark-quiz-incorrect-answer-color: #f75e63;
-  --dark-left-button-gradient: radial-gradient(
-    97.57% 210.75% at 0.9% 2.98%,
-    rgb(191 191 191 / 40%) 0%,
-    rgb(255 255 255 / 0%) 100%
-  );
-  --dark-right-button-gradient: radial-gradient(97.57% 210.75% at 0.9% 2.98%, rgb(191 191 191 / 70%) 0%, #fff 100%);
-  --dark-left-button-text-color: rgb(255 255 255 / 20%);
-  --dark-right-button-text-color: #000;
+  --dark-top-line-color: #cee3b9;
 }

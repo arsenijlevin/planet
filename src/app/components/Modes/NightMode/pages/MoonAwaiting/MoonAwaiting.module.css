@@ -1,8 +1,16 @@
-.moonAwaiting {
+.moonAwaitingWrapper {
   background-color: var(--dark-background-color);
   width: 100%;
   height: 100%;
-  position: absolute;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.moonAwaiting {
+  display: flex;
+  flex-direction: column;
+  width: 640px;
 }
 
 .heading {
@@ -10,57 +18,48 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .heading h1 {
-  font-family: var(--font-tt-travels-next);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 65%;
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--dark-text-color);
-}
-
-.heading span {
   font-family: var(--font-play);
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 85%;
   text-align: center;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: #fff;
 }
 
 .tipButton {
   display: flex;
-  max-width: 372px;
+  max-width: 360px;
+  width: 100%;
   margin: 40px auto;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
 }
 
 .tipButton button {
-  padding: 20px;
+  padding: 15px;
   width: 100%;
   margin: auto;
   background: #fff;
-  opacity: 0.8;
-  border-radius: 5px;
+  border-radius: 30px;
   border: 0;
 }
 
 .tipButton button span {
   font-family: var(--font-play);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
   color: #000;
 }
 
@@ -72,5 +71,56 @@
 }
 
 .moonAnimation video {
-  min-height: 360px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button.toTheMoonButton {
+  margin-top: 200px;
+}
+
+@media (height <= 700px) {
+  button.toTheMoonButton {
+    margin-top: 0;
+    position: fixed;
+    bottom: 50px;
+  }
+}
+
+@media (width >= 402px) {
+  .tipButton button span {
+    font-size: 18px;
+  }
+
+  .heading h1 {
+    font-size: 44px;
+  }
+}
+
+@media (width >= 1512px) {
+  .heading h1 {
+    font-size: 57px;
+  }
+
+  .tipButton button span {
+    font-size: 24px;
+  }
+
+  .tipButton button {
+    padding: 20px;
+  }
+
+  .tipButton {
+    max-width: 460px;
+  }
+}
+
+@media (width >= 1728px) {
+  .heading h1 {
+    font-size: 69px;
+  }
+
+  .tipButton button span {
+    font-size: 28px;
+  }
 }

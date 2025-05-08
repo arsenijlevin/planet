@@ -1,9 +1,11 @@
 .lettersAnimation {
   position: absolute;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow: hidden;
+  left: 0;
+  top: 0;
 }
 
 .lettersContainer {
@@ -13,12 +15,19 @@
   width: 100%;
   flex-wrap: wrap;
   height: 100%;
-  gap: 16px;
+  gap: 8px;
+  padding: 20px;
+  padding-top: 0;
 }
 
 .letter {
-  font-family: 'TT Travels Next Trl', sans-serif;
-  font-size: 22px;
+  font-family: var(--font-play);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: center;
+  opacity: 0.9;
   position: absolute;
   display: inline-block;
   color: white;
@@ -29,4 +38,22 @@
 .word {
   display: flex;
   flex-wrap: nowrap;
+}
+
+@media (width >= 402px) {
+  .letter {
+    font-size: 20px;
+  }
+}
+
+@media (width >= 1512px) {
+  .letter {
+    font-size: 28px;
+  }
+}
+
+@media (width >= 1728px) {
+  .letter {
+    font-size: 32px;
+  }
 }

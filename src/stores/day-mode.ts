@@ -1,6 +1,12 @@
 import { create } from 'zustand';
 
-export type DayModePage = 'start' | 'quiz-progress' | 'quiz-results' | 'info';
+export type DayModePage =
+  | 'start'
+  | 'quiz-progress'
+  | 'quiz-results-send-timer'
+  | 'quiz-results-send'
+  | 'quiz-results'
+  | 'info';
 
 export interface QuizAnswer {
   questionId: number;
@@ -28,6 +34,10 @@ export interface Quiz {
   nextQuestion: () => void;
   currentQuestion: () => QuizQuestion;
   correctAnswers: () => number;
+  restart: () => void;
+  sendResultsTimer: () => void;
+  sendResults: () => void;
+  showResults: () => void;
 }
 
 export interface DayModeStore {
@@ -58,7 +68,7 @@ export const useDayModeStore = create<DayModeStore>()((set, get) => ({
     currentQuestion: () => get().quiz.questions[get().quiz.answers.length - 1],
 
     start: async () => {
-      if (get().quiz.isStarted || get().quiz.questions.length > 0) return;
+      if ((get().quiz.isStarted || get().quiz.questions.length > 0) && !get().quiz.isFinished) return;
 
       const response = await fetch('questions.json');
 
@@ -71,6 +81,7 @@ export const useDayModeStore = create<DayModeStore>()((set, get) => ({
           ...state.quiz,
           questions: randomQuestions,
           isStarted: true,
+          isFinished: false,
           answers: [
             {
               questionId: randomQuestions[0].id,
@@ -83,9 +94,25 @@ export const useDayModeStore = create<DayModeStore>()((set, get) => ({
       get().setCurrentPage('quiz-progress');
     },
 
+    restart: () => {
+      get().quiz.start();
+    },
+
     finish: () => {
       set((state) => ({ quiz: { ...state.quiz, isFinished: true } }));
 
+      get().quiz.sendResultsTimer();
+    },
+
+    sendResultsTimer: () => {
+      get().setCurrentPage('quiz-results-send-timer');
+    },
+
+    sendResults: () => {
+      get().setCurrentPage('quiz-results-send');
+    },
+
+    showResults: () => {
       get().setCurrentPage('quiz-results');
     },
 
@@ -100,8 +127,6 @@ export const useDayModeStore = create<DayModeStore>()((set, get) => ({
           ),
         },
       }));
-
-      console.log(get());
     },
 
     nextQuestion: () =>

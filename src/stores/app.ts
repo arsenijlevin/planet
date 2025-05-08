@@ -9,8 +9,6 @@ export interface AppState {
 
 const pathname = window.location.href;
 
-console.log('"pathname', pathname);
-
 const isDayByPathname = pathname.includes('day');
 const isNightByPathname = pathname.includes('night');
 
