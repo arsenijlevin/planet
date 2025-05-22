@@ -24,6 +24,7 @@
     "strictNullChecks": true,
     "paths": {
       "@/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
       "@assets/*": ["./src/assets/*"],
       "@shared/*": ["./src/shared/*"],
       "@stores/*": ["./src/stores/*"]

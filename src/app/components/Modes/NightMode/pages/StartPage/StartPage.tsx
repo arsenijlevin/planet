@@ -1,10 +1,10 @@
-import { useNightModeStore } from '@/stores/night-mode';
 import moonIcon from '@assets/moon.svg';
 import nlLogo from '@assets/nl-logo.png';
 import imageMain from '@assets/planets-2d-dark.png';
 import samoletLogo from '@assets/samolet-logo.png';
 import sputnikLogo from '@assets/sputnik-logo.png';
 import sunIcon from '@assets/sun.svg';
+import { useNightModeStore } from '@stores/night-mode';
 
 import styles from './StartPage.module.css';
 

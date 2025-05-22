@@ -1,5 +1,5 @@
-import { useNightModeStore } from '@/stores/night-mode';
 import imageMain from '@assets/planets-2d-dark.png';
+import { useNightModeStore } from '@stores/night-mode';
 
 import styles from './Info.module.css';
 

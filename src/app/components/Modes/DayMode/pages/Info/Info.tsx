@@ -1,5 +1,5 @@
-import { useDayModeStore } from '@/stores/day-mode';
 import imageMain from '@assets/planets-2d.png';
+import { useDayModeStore } from '@stores/day-mode';
 
 import styles from './Info.module.css';
 

@@ -1,10 +1,10 @@
-import { useDayModeStore } from '@/stores/day-mode';
 import moonIcon from '@assets/moon.svg';
 import nlLogo from '@assets/nl-logo.png';
 import imageMain from '@assets/planets-2d.png';
 import samoletLogo from '@assets/samolet-logo.png';
 import sputnikLogo from '@assets/sputnik-logo.png';
 import sunIcon from '@assets/sun.svg';
+import { useDayModeStore } from '@stores/day-mode';
 
 import styles from './StartPage.module.css';
 

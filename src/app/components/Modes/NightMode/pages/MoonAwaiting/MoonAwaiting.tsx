@@ -1,4 +1,4 @@
-import { Header } from '@/app/components/Header/Header';
+import { Header } from '@app/components/Header/Header';
 import { LettersAnimationGSAP } from '@shared/components/LettersAnimationGSAP/LettersAnimationGSAP';
 import { usePrediction } from '@shared/hooks/usePrediction';
 import { MOON_VIDEO_TIMINGS } from '@shared/moon-video-timings';

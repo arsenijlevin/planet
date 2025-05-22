@@ -1,7 +1,7 @@
-import { Header } from '@/app/components/Header/Header';
-import { useDayModeStore } from '@/stores/day-mode';
+import { Header } from '@app/components/Header/Header';
 import arrowBigIcon from '@assets/arrow-big.svg';
 import rocketIcon from '@assets/rocket.svg';
+import { useDayModeStore } from '@stores/day-mode';
 
 import { FinalResult } from './FinalResult/FinalResult';
 import styles from './Quiz.module.css';
