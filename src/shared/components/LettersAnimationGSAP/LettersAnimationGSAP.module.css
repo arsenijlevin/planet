@@ -1,3 +1,7 @@
+:root {
+  --letter-size: clamp(18px, 5vw, 32px);
+}
+
 .lettersAnimation {
   display: flex;
   width: 100%;
@@ -12,7 +16,7 @@
   flex-wrap: wrap;
   height: 100%;
   column-gap: 4.5px;
-  padding: 0 20px;
+  padding: 0 15px;
   padding-top: 0;
 }
 
@@ -20,7 +24,7 @@
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: var(--letter-size);
   line-height: 130%;
   text-align: center;
   opacity: 0.9;
@@ -37,29 +41,14 @@
   flex-wrap: nowrap;
 }
 
-@media (width >= 402px) {
-  .letter {
-    font-size: 20px;
+@media (width >= 590px) {
+  .lettersContainer {
+    padding: 0;
   }
 }
 
 @media (width >= 1512px) {
-  .letter {
-    font-size: 28px;
-  }
-
-  .lettersAnimation {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
   .lettersContainer {
     padding: 0 30px;
-  }
-}
-
-@media (width >= 1728px) {
-  .letter {
-    font-size: 32px;
   }
 }

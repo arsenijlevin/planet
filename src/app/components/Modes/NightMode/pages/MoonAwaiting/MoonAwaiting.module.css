@@ -1,3 +1,9 @@
+:root {
+  --title-size: clamp(35px, 11vw, 69px);
+  --video-size: clamp(240px, 75vw, 380px);
+  --button-text-size: clamp(16px, 4vw, 24px);
+}
+
 .moonAwaitingWrapper {
   background-color: var(--dark-background-color);
   width: 100%;
@@ -26,7 +32,7 @@
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 700;
-  font-size: 44px;
+  font-size: var(--title-size);
   line-height: 85%;
   text-align: center;
   letter-spacing: 0.05em;
@@ -55,11 +61,17 @@
   border: 0;
 }
 
+@media (width > 608px) {
+  .tipButton {
+    padding: 0;
+  }
+}
+
 .tipButton button span {
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: var(--button-text-size);
   line-height: 19px;
   color: #000;
 }
@@ -67,8 +79,8 @@
 .moonAnimation {
   width: 100%;
   height: 100%;
-  max-width: 340px;
-  max-height: 360px;
+  max-width: var(--video-size);
+  max-height: var(--video-size);
   margin: auto;
   margin-top: 35px;
   margin-bottom: 35px;
@@ -76,47 +88,18 @@
 }
 
 .moonAnimation video {
-  height: 360px;
+  height: var(--video-size);
   object-fit: cover;
 }
 
 @media (width <= 380px) {
   .moonAnimation video {
-    height: 290px;
     object-fit: cover;
   }
 }
 
-@media (width >= 402px) {
-  .tipButton button span {
-    font-size: 18px;
-  }
-
-  .heading h1 {
-    font-size: 44px;
-  }
-}
-
 @media (width >= 1512px) {
-  .heading h1 {
-    font-size: 57px;
-  }
-
-  .tipButton button span {
-    font-size: 24px;
-  }
-
   .tipButton button {
     padding: 20px;
-  }
-}
-
-@media (width >= 1728px) {
-  .heading h1 {
-    font-size: 69px;
-  }
-
-  .tipButton button span {
-    font-size: 28px;
   }
 }

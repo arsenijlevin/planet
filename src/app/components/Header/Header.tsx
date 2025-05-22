@@ -11,7 +11,7 @@ export function Header(props: HeaderProps) {
   const styles = props.mode === 'night' ? stylesNight : stylesDay; // TODO: Fix to one file with changing css property
 
   return (
-    <header>
+    <header className={styles.header}>
       <div className={styles.circles}>
         <div></div>
         <div></div>

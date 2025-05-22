@@ -1,16 +1,22 @@
+:root {
+  --result-text-size: clamp(20px, 5vw, 32px);
+  --result-counter-size: clamp(70px, 20vw, 120px);
+  --result-min-height: clamp(360px, 80vw, 480px);
+}
+
 .result {
   margin-bottom: 10px;
-  padding-top: 70px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
-  min-height: 480px;
+  min-height: var(--result-min-height);
 }
 
 .result span {
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: var(--result-text-size);
   line-height: 115%;
   letter-spacing: 0.02em;
   color: #fff;
@@ -31,7 +37,7 @@
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 700;
-  font-size: 70px;
+  font-size: var(--result-counter-size);
   line-height: 100%;
   font-variant-numeric: tabular-nums;
 }
@@ -42,26 +48,4 @@
 
 .resultCounterWrong span {
   color: var(--light-quiz-incorrect-answer-color);
-}
-
-@media (width >= 402px) {
-  .result > span {
-    font-size: 20px;
-  }
-}
-
-@media (width >= 1512px) {
-  .result > span {
-    font-size: 28px;
-  }
-
-  .resultCounter span {
-    font-size: 120px;
-  }
-}
-
-@media (width >= 1728px) {
-  .result > span {
-    font-size: 32px;
-  }
 }

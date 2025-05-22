@@ -1,3 +1,13 @@
+:root {
+  --title-size: clamp(30px, 11vw, 69px);
+  --subtitle-size: clamp(10px, 3.47vw, 21px);
+  --link-size: clamp(14px, 3.45vw, 24px);
+  --image-size: clamp(210px, 70vw, 380px);
+  --logo-size: clamp(20px, 8vw, 70px);
+  --buttons-text-size: clamp(10px, 4.6vw, 24px);
+  --buttons-icons-size: clamp(10px, 4.6vw, 24px);
+}
+
 .content {
   padding: 20px;
   display: flex;
@@ -8,51 +18,56 @@
 }
 
 .imageMain {
-  max-height: 400px;
+  max-height: var(--image-size);
   margin-top: 40px;
   margin-bottom: 40px;
+  flex: 1;
+  display: flex;
 }
 
 .imageMain img {
-  max-height: 400px;
+  object-fit: contain;
   mix-blend-mode: luminosity;
 }
 
 .heading {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
+  max-width: 560px;
 }
 
 .heading h1 {
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 700;
-  font-size: 44px;
+  font-size: var(--title-size);
   line-height: 85%;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
+  white-space: nowrap;
 }
 
 .heading h2 {
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: var(--subtitle-size);
+  line-height: calc(var(--subtitle-size) + 2);
   text-align: center;
   color: #fff;
   letter-spacing: 0.34em;
   opacity: 0.6;
+  white-space: nowrap;
 }
 
 .heading button {
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--link-size);
   line-height: 16px;
   text-decoration-line: underline;
   color: #fff;
@@ -64,11 +79,17 @@
   background: 0;
   border: 0;
   opacity: 0.6;
+  margin-left: 3px;
+}
+
+.buttons img {
+  width: var(--buttons-icons-size);
+  height: var(--buttons-icons-size);
 }
 
 .logos {
   display: flex;
-  gap: 3px;
+  gap: clamp(3px, 2vw, 10px);
 }
 
 .logos div {
@@ -76,15 +97,15 @@
 }
 
 .logos div img {
-  width: 40px;
-  height: 40px;
+  width: var(--logo-size);
+  height: var(--logo-size);
   border-radius: 50%;
 }
 
 .buttons {
   display: flex;
   gap: 10px;
-  max-width: 450px;
+  max-width: 560px;
   width: 100%;
 }
 
@@ -106,7 +127,7 @@
   font-family: var(--font-play);
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: var(--buttons-text-size);
   line-height: 19px;
   color: var(--dark-left-button-text-color);
 }
@@ -115,23 +136,21 @@
   opacity: 0.5;
 }
 
-@media (width <= 360px) {
-  .buttons {
-    flex-direction: column;
-  }
-
+@media (width <= 400px) {
   .buttonLeft,
   .buttonRight {
     padding: 10px;
   }
-}
 
-@media (width <= 400px) {
-  .heading h1 {
-    font-size: 34px;
+  .heading button {
+    margin-top: 14px;
   }
 
-  .heading h2 {
-    font-size: 10px;
+  .logos div {
+    margin-bottom: 20px;
+  }
+
+  .content {
+    padding: 10px;
   }
 }
