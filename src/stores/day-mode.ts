@@ -23,37 +23,58 @@ export interface QuizQuestion {
   correctVariant: string;
 }
 
-export interface Quiz {
-  isFinished: boolean;
-  isStarted: boolean;
-  answers: QuizAnswer[];
-  questions: QuizQuestion[];
-  start: () => Promise<void>;
-  answerQuestion: (answer: string) => void;
-  finish: () => void;
-  nextQuestion: () => void;
-  currentQuestion: () => QuizQuestion;
-  correctAnswers: () => number;
-  restart: () => void;
-  sendResultsTimer: () => void;
-  sendResults: () => void;
-  showResults: () => void;
-}
-
-export interface DayModeStore {
+export interface DayModeState {
   currentPage: DayModePage;
-  setCurrentPage: (page: DayModePage) => void;
-
-  quiz: Quiz;
+  quiz: {
+    isFinished: boolean;
+    isStarted: boolean;
+    answers: QuizAnswer[];
+    questions: QuizQuestion[];
+  };
 }
 
-export const useDayModeStore = create<DayModeStore>()((set, get) => ({
-  currentPage: 'start',
-  setCurrentPage: (page) => set(() => ({ currentPage: page })),
+export interface DayModeActions {
+  setCurrentPage: (page: DayModePage) => void;
+  reset: () => void;
+  quiz: {
+    start: () => Promise<void>;
+    answerQuestion: (answer: string) => void;
+    finish: () => void;
+    nextQuestion: () => void;
+    currentQuestion: () => QuizQuestion;
+    correctAnswers: () => number;
+    restart: () => void;
+    sendResultsTimer: () => void;
+    sendResults: () => void;
+    showResults: () => void;
+  };
+}
 
+const initialState: DayModeState = {
+  currentPage: 'start' as DayModePage,
   quiz: {
     isFinished: false,
     isStarted: false,
+    answers: [],
+    questions: [],
+  },
+};
+
+export const useDayModeStore = create<DayModeActions & DayModeState>()((set, get) => ({
+  ...initialState,
+  setCurrentPage: (page) => set(() => ({ currentPage: page })),
+  reset: () => {
+    set({
+      ...initialState,
+      quiz: {
+        ...get().quiz,
+        ...initialState.quiz,
+      },
+    });
+  },
+
+  quiz: {
+    ...initialState.quiz,
 
     correctAnswers: () =>
       get().quiz.answers.filter((answer) => {
@@ -61,9 +82,6 @@ export const useDayModeStore = create<DayModeStore>()((set, get) => ({
 
         return questionFromId?.correctVariant === answer.userAnswer;
       }).length,
-
-    questions: [],
-    answers: [],
 
     currentQuestion: () => get().quiz.questions[get().quiz.answers.length - 1],
 

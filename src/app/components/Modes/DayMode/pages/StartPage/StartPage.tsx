@@ -1,8 +1,8 @@
 import moonIcon from '@assets/moon.svg';
-import nlLogo from '@assets/nl-logo.png';
+import nlLogo from '@assets/nl-logo.svg';
 import imageMain from '@assets/planets-2d.png';
-import samoletLogo from '@assets/samolet-logo.png';
-import sputnikLogo from '@assets/sputnik-logo.png';
+import samoletLogo from '@assets/samolet-logo.svg';
+import sputnikLogo from '@assets/sputnik-logo.svg';
 import sunIcon from '@assets/sun.svg';
 import { useDayModeStore } from '@stores/day-mode';
 

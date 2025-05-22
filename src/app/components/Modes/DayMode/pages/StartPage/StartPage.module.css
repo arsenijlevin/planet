@@ -8,19 +8,21 @@
 }
 
 .imageMain {
-  max-height: 400px;
+  max-height: 300px;
   margin-top: 40px;
   margin-bottom: 40px;
+  flex: 1;
+  display: flex;
 }
 
 .imageMain img {
-  max-height: 400px;
+  object-fit: contain;
 }
 
 .heading {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
 }
 
 .heading h1 {
@@ -81,7 +83,7 @@
 .buttons {
   display: flex;
   gap: 10px;
-  max-width: 450px;
+  max-width: 360px;
   width: 100%;
 }
 
@@ -105,7 +107,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-  color: var(--light-left-button-text-color);
+  color: var(--light-text-color);
 }
 
 .buttonRight:disabled {
@@ -125,10 +127,18 @@
 
 @media (width <= 400px) {
   .heading h1 {
-    font-size: 34px;
+    font-size: 29.1259px;
+    line-height: 85%;
+    letter-spacing: 0.05em;
   }
 
   .heading h2 {
-    font-size: 10px;
+    font-size: 9.263px;
+    line-height: 11px;
+    letter-spacing: 0.34em;
+  }
+
+  .heading button {
+    margin-top: 14px;
   }
 }

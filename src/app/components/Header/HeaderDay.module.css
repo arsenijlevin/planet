@@ -9,7 +9,6 @@ header {
 .circles {
   display: flex;
   gap: 5px;
-  padding-left: 15px;
   flex: 100%;
   max-width: 20%;
   min-width: 95px;
@@ -83,5 +82,23 @@ header {
 
   .line {
     min-width: 65px;
+  }
+}
+
+@media (width >= 402px) {
+  .headerTitle h4 {
+    font-size: 14px;
+  }
+}
+
+@media (width >= 1512px) {
+  .headerTitle h4 {
+    font-size: 22px;
+  }
+}
+
+@media (width >= 1728px) {
+  .headerTitle h4 {
+    font-size: 19px;
   }
 }

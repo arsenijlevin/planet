@@ -11,7 +11,7 @@ interface QuizProps {
 }
 
 export function Quiz(props: QuizProps) {
-  const { quiz, currentPage } = useDayModeStore();
+  const { quiz, currentPage, reset } = useDayModeStore();
 
   const currentQuestion = quiz.currentQuestion();
 
@@ -24,11 +24,17 @@ export function Quiz(props: QuizProps) {
     <div className={styles.quizPageWrapper}>
       <main className={styles.quizPage}>
         <Header mode="day" />
-        <div className={styles.heading}>
+        <button
+          className={styles.heading}
+          onClick={() => {
+            reset();
+          }}
+          aria-label="На главную"
+        >
           <h1>
             <b>Планетари</b>ум
           </h1>
-        </div>
+        </button>
         <div className={styles.quiz}>
           {!props.showResult ? (
             <>

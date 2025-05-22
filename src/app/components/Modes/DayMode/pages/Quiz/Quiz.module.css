@@ -8,7 +8,7 @@
 .quizPage {
   display: flex;
   flex-direction: column;
-  width: 640px;
+  width: 590px;
   padding: 10px;
   padding-top: 0;
 }
@@ -19,6 +19,9 @@
   align-items: center;
   gap: 12px;
   margin-top: 5px;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
 }
 
 .heading h1 {

@@ -63,7 +63,7 @@
   border: 0;
 }
 
-.heading button img {
+.heading button svg {
   transform: rotate(180deg);
 }
 
