@@ -1,13 +1,31 @@
 import { useDayModeStore } from '@stores/day-mode';
+import { useCallback, useEffect } from 'react';
+import useWebSocket from 'react-use-websocket';
+
+import { WEBSOCKET_URL } from '@/shared/websocket';
 
 import styles from './FinalResult.module.css';
 
 export function FinalResult() {
+  const { sendMessage } = useWebSocket(WEBSOCKET_URL);
+
   const { quiz, currentPage } = useDayModeStore();
 
   const correctAnswers = quiz.correctAnswers();
   const quizLength = quiz.questions.length;
   const isAllCorrect = correctAnswers === quizLength;
+
+  const handleSendResults = useCallback(() => {
+    sendMessage(
+      JSON.stringify({
+        completed: isAllCorrect,
+      }),
+    );
+  }, [isAllCorrect, sendMessage]);
+
+  useEffect(() => {
+    handleSendResults();
+  }, [handleSendResults]);
 
   return (
     <div className={styles.result}>
